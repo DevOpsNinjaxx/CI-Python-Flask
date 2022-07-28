@@ -5,12 +5,12 @@
 
 # Step 1:
 # Create dockerpath
-dockerpath="aminfourty7/ml-microservice-api:v1.0.0"
+dockerpath=aminfourty7/mlmicroserviceapi:v1.0.0
 
 # Step 2:  
 # Authenticate & tag
 docker login
-docker tag ml-microservice-api $dockerpath
+docker tag mlmicroserviceapi $dockerpath
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
