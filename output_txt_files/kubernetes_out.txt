@@ -1,4 +1,12 @@
 <paste log output from Kubernetes-mediated prediction, here>
+aminu@DESKTOP-77SI4B1:~/project-ml-microservice-kubernetes$ ./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+(.devops) aminu@DESKTOP-77SI4B1:~/project-ml-microservice-kubernetes$ ./run_kubernetes.sh
 NAME                READY   STATUS    RESTARTS   AGE
 mlmicroserviceapi   1/1     Running   0          5h57m
 Forwarding from 127.0.0.1:8000 -> 80
