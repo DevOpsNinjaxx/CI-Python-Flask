@@ -22,7 +22,7 @@ jobs:
 
 
   lint:
-
+    needs: build
     runs-on: ubuntu-latest  
     steps:
       - name: Check out repository code
@@ -41,7 +41,7 @@ jobs:
 
 
   test:
-  
+    needs: lint
     runs-on: ubuntu-latest  
     steps:
       - name: Check out repository code
