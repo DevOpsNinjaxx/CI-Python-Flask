@@ -34,9 +34,9 @@ jobs:
 
       - name: Install dependencies
         run: |
-        echo "Cython<3" > cython_constraint.txt
-        PIP_CONSTRAINT=cython_constraint.txt pip install "ai-core-sdk[aicore-content]"
-        make install    
+          echo "Cython<3" > cython_constraint.txt
+          PIP_CONSTRAINT=cython_constraint.txt pip install "ai-core-sdk[aicore-content]"
+          make install    
 
       - name: Run lint using Makefile
         run: make lint
