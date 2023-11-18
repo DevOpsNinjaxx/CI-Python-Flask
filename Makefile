@@ -21,7 +21,7 @@ install:
 
 test:
 	# Additional, optional, tests could go here
-	python -m pytest -vv --cov=myrepolib tests/test_app.py
+	python -m pytest tests/test_app.py
 
 
 lint:
