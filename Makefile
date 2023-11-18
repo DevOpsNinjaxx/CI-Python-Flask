@@ -15,7 +15,7 @@ install:
 	pip install --upgrade pip
 	pip install --upgrade setuptools
 	pip install --upgrade wheel
-	pip install -r requirements.txt
+	pip install --no-cache-dir package_name -r requirements.txt
 	# Get Hadolint	
 	wget -O ./hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64 &&\
 	chmod +x ./hadolint	
