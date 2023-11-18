@@ -34,10 +34,7 @@ jobs:
           python-version: '3.7'
 
       - name: Install dependencies
-        run: |
-          echo "Cython<3" > cython_constraint.txt
-          PIP_CONSTRAINT=cython_constraint.txt pip install "ai-core-sdk[aicore-content]"
-          make install    
+        run: make install    
 
       - name: Run lint using Makefile
         run: make lint
@@ -53,6 +50,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.7'
+          
+      - name: Install dependencies
+        run: make install      
 
       - name: Run tests using Makefile
         run: make test
