@@ -8,15 +8,15 @@ from sklearn.preprocessing import StandardScaler
 
 # Set up logging
 logging.basicConfig(format="%(asctime)s — %(name)s — %(levelname)s — %(message)s")
-LOG = create_logger(__name__)
-LOG.setLevel(logging.INFO)
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 # Initialize Flask app
 app = Flask(__name__)
 
 def scale(payload):
     """Scales Payload"""
-    LOG.info(f"Scaling Payload: \n{payload}")
+    logger.info(f"Scaling Payload: \n{payload}")
     scaler = StandardScaler().fit(payload.astype(float))
     scaled_adhoc_predict = scaler.transform(payload.astype(float))
     return scaled_adhoc_predict
@@ -32,9 +32,9 @@ def predict():
     
     # Logging the input payload
     json_payload = request.json
-    LOG.info(f"JSON payload: \n{json_payload}")
+    logger.info(f"JSON payload: \n{json_payload}")
     inference_payload = pd.DataFrame(json_payload)
-    LOG.info(f"Inference payload DataFrame: \n{inference_payload}")
+    logger.info(f"Inference payload DataFrame: \n{inference_payload}")
     
     # Scale the input
     scaled_payload = scale(inference_payload)
@@ -46,7 +46,7 @@ def predict():
     prediction = list(clf.predict(scaled_payload))
     
     # Log the output prediction value
-    LOG.info(f"Prediction: {prediction}")
+    logger.info(f"Prediction: {prediction}")
     
     return jsonify({'prediction': prediction})
 
